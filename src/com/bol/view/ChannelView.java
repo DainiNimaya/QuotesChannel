@@ -4,6 +4,7 @@
  */
 package com.bol.view;
 
+import com.bol.services.impl.Channel;
 import java.awt.Color;
 
 /**
@@ -41,6 +42,7 @@ public class ChannelView extends javax.swing.JFrame {
         greenStartLbl = new javax.swing.JLabel();
         redStartLbl1 = new javax.swing.JLabel();
         startChannelLbl = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         channelLbl = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         mainLbl = new javax.swing.JLabel();
@@ -104,6 +106,7 @@ public class ChannelView extends javax.swing.JFrame {
         redStartLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/start_24px_red.png"))); // NOI18N
         mainPnl.add(redStartLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 30, 30));
 
+        startChannelLbl.setBackground(new java.awt.Color(0, 0, 204));
         startChannelLbl.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         startChannelLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         startChannelLbl.setText("Start Channel");
@@ -118,6 +121,10 @@ public class ChannelView extends javax.swing.JFrame {
             }
         });
         mainPnl.add(startChannelLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 180, 30));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton1.setText("Start Channel");
+        mainPnl.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 180, 30));
 
         channelLbl.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         channelLbl.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Channel", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18), new java.awt.Color(1, 0, 0))); // NOI18N
@@ -148,7 +155,8 @@ public class ChannelView extends javax.swing.JFrame {
     private void startChannelLblMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startChannelLblMouseEntered
         redStartLbl1.setVisible(true);
         greenStartLbl.setVisible(false);
-        startChannelLbl.setBackground(Color.WHITE);// TODO add your handling code here:
+        startChannelLbl.setBackground(Color.red);
+        startChannelLbl.setOpaque(true);// TODO add your handling code here:
     }//GEN-LAST:event_startChannelLblMouseEntered
 
     private void startChannelLblMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startChannelLblMouseExited
@@ -207,6 +215,7 @@ public class ChannelView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel channelLbl;
     private javax.swing.JLabel greenStartLbl;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

@@ -5,8 +5,9 @@
 package com.bol.services.impl;
 
 import org.junit.Test;
+import org.junit.Rule;
 import static org.junit.Assert.*;
-import org.junit.Before;
+import org.junit.rules.ExpectedException;
 
 /**
  *
@@ -14,13 +15,11 @@ import org.junit.Before;
  */
 public class ChannelTest {
     
-//    public ChannelTest() {
-//    }
-    
     Channel channel = null;
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
     
-    @Before
-    public void init() {
+    public ChannelTest() {
         channel = new Channel();
     }
 
@@ -29,6 +28,7 @@ public class ChannelTest {
      */
     @Test
     public void testSubscribeChannel() {
+        
     }
 
     /**
@@ -45,13 +45,26 @@ public class ChannelTest {
     public void testNotifySubcribers() {
     }
 
-    /**
-     * Test of addChannel method, of class Channel.
-     */
+   
     @Test
     public void testAddChannel() {
        channel.addChannel("test");
        assertEquals(1,Channel.channelList.size());
+    }
+    
+    @Test
+    public void testAddChannelWithNullOrEmptyStringValues() {
+       thrown.expect(IllegalArgumentException.class);
+       thrown.expectMessage("Channel name can't be empty or null");
+       channel.addChannel("");
+       channel.addChannel(null);
+    }
+    
+    @Test
+    public void testChannelNameAlreadyExist() {
+       thrown.expect(RuntimeException.class);
+       thrown.expectMessage("Channel name already exist");
+       channel.addChannel("Quotes");
     }
     
 }

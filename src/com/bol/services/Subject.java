@@ -9,8 +9,8 @@ package com.bol.services;
  * @author USER
  */
 public interface Subject {
-    public void subscribeChannel();
-    public void unSubscribeChannel();
-    public void notifySubcribers();
+    public void subscribeChannel(String name, Observer observer);
+    public void unSubscribeChannel(String name, Observer observer);
+    public void notifySubcribers(String t);
     
 }

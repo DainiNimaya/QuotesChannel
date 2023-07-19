@@ -4,10 +4,11 @@
  */
 package com.bol.services.impl;
 
-import com.bol.services.ChannelUsers;
+import com.bol.services.Observer;
 import com.bol.services.Subject;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -16,24 +17,45 @@ import java.util.List;
  */
 public class Channel implements Subject{
     
-    public static HashMap<String, List<ChannelUsers>> channelList = new HashMap<>();
+    public static HashMap<String, List<Observer>> channelList = new HashMap<>();
 
     @Override
-    public void subscribeChannel() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void subscribeChannel(String name, Observer observer) {
+        List<Observer> users = channelList.get(name);
+        if(!users.contains(observer)){
+            users.add(observer);
+        }
     }
 
     @Override
-    public void unSubscribeChannel() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void unSubscribeChannel(String name,Observer observer) {
+        List<Observer> list = channelList.get(name);
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            if(it.next().equals(observer)){
+                list.remove(observer);
+            }
+        }
     }
 
     @Override
-    public void notifySubcribers() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void notifySubcribers(String t) {
+        channelList.forEach((key,value) -> {
+            for(Observer observer:value){
+                observer.update(t);
+            }
+        });
     }
     
     
     public void addChannel(String name){
+        if(name.isEmpty() || name == null){
+            throw new IllegalArgumentException("Channel name can't be empty or null");
+        }
+        if(!channelList.containsKey(name)){
+                channelList.put(name, new ArrayList<>());
+        }else{
+                throw new RuntimeException("Channel name already exist");
+        }
     }
 }
