@@ -7,26 +7,16 @@ package com.bol.view;
 import com.bol.services.impl.Channel;
 
 
-/**
- *
- * @author USER
- */
-public class two extends javax.swing.JFrame{
-
-    /**
-     * Creates new form two
-     */
+public class NewChannelView extends javax.swing.JFrame{
     
-    Channel channels = null;
-    public two(Channel channel) {
+    private Channel channels = new Channel();
+    
+    public NewChannelView(String t) {
         initComponents();
-        channels = channel;
+        ChannelNameLbl.setText(t);
     }
     
-//    public two(Channel channel){
-//        channels = channel;
-//    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,13 +26,13 @@ public class two extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         mainMsg = new javax.swing.JTextField();
         shareBtn = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        ChannelNameLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(mainMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 183, 102));
 
         shareBtn.setText("Share");
         shareBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -50,17 +40,36 @@ public class two extends javax.swing.JFrame{
                 shareBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(shareBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 36, -1, -1));
+
+        ChannelNameLbl.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        ChannelNameLbl.setAlignmentX(0.5F);
+        ChannelNameLbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(shareBtn)
+                    .addComponent(mainMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ChannelNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(ChannelNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(mainMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(shareBtn)
+                .addGap(22, 22, 22))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
@@ -69,45 +78,18 @@ public class two extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void shareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareBtnActionPerformed
-        channels.notifySubcribers(mainMsg.getText());
+        this.channels.notifySubcribers(mainMsg.getText());
     }//GEN-LAST:event_shareBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(two.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(two.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(two.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(two.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new two().setVisible(true);
-//            }
-//        });
+         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ChannelNameLbl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField mainMsg;
     private javax.swing.JButton shareBtn;

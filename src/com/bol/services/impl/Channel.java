@@ -8,7 +8,6 @@ import com.bol.services.Observer;
 import com.bol.services.Subject;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -30,11 +29,8 @@ public class Channel implements Subject{
     @Override
     public void unSubscribeChannel(String name,Observer observer) {
         List<Observer> list = channelList.get(name);
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            if(it.next().equals(observer)){
-                list.remove(observer);
-            }
+        if (list.contains(observer)){
+            list.remove(observer);
         }
     }
 
