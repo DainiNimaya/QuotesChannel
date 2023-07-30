@@ -21,9 +21,20 @@ public class Channel implements Subject{
     @Override
     public void subscribeChannel(String name, Observer observer) {
         List<Observer> users = channelList.get(name);
-        if(!users.contains(observer)){
-            users.add(observer);
+        if (users != null){
+            if(observer != null) {
+                if(!users.contains(observer)){
+                    users.add(observer);
+                }else{
+                    throw new RuntimeException("User have already subscribed");
+                }
+            }else{
+                throw new RuntimeException("User detail not found");
+            }
+        }else{
+            throw new RuntimeException("Channel not found");
         }
+        
     }
 
     @Override

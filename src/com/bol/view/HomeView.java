@@ -31,26 +31,44 @@ public class HomeView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         channelLabl = new javax.swing.JLabel();
+        greenStartLbl = new javax.swing.JLabel();
         startChannelBtn = new javax.swing.JButton();
         startChannelTxt = new javax.swing.JTextField();
         subscribeBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        channelLbl = new javax.swing.JLabel();
+        userLbl = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        mainLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(channelLabl, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 80, 20));
 
+        channelLabl.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jPanel1.add(channelLabl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 170, 30));
+
+        greenStartLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        greenStartLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/start_24px.png"))); // NOI18N
+        jPanel1.add(greenStartLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 30, 30));
+
+        startChannelBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         startChannelBtn.setText("Start Channel");
+        startChannelBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        startChannelBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         startChannelBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 startChannelBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                startChannelBtnMouseEntered(evt);
             }
         });
         startChannelBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -58,26 +76,66 @@ public class HomeView extends javax.swing.JFrame {
                 startChannelBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(startChannelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 160, -1));
-        jPanel1.add(startChannelTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 160, 30));
+        jPanel1.add(startChannelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 160, 30));
 
-        subscribeBtn.setText("subscribe");
+        startChannelTxt.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        startChannelTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        startChannelTxt.setToolTipText("Enter Channel Name");
+        jPanel1.add(startChannelTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 30));
+
+        subscribeBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        subscribeBtn.setText("Subscribe");
+        subscribeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         subscribeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subscribeBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(subscribeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, -1, -1));
+        jPanel1.add(subscribeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 130, 30));
 
-        jLabel1.setText("No channels avaliable yet");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setText("No Channels Avaliable Yet !!!");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 180, 20));
 
-        jLabel2.setText("Channel Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel2.setText("Channel Name :");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 340));
+        channelLbl.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        channelLbl.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Channel", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18), new java.awt.Color(1, 0, 0))); // NOI18N
+        jPanel1.add(channelLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 210, 210));
+
+        userLbl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Subscribers", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 18))); // NOI18N
+        jPanel1.add(userLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 230, 210));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 470, 20));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("-");
+        jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 5, 20, 20));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("X");
+        jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 5, 20, 20));
+
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/TyOgzR.png"))); // NOI18N
+        jPanel1.add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 340));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 340));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void subscribeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subscribeBtnActionPerformed
@@ -100,6 +158,14 @@ public class HomeView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_startChannelBtnActionPerformed
 
+    private void startChannelBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startChannelBtnMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_startChannelBtnMouseEntered
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -109,12 +175,18 @@ public class HomeView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel channelLabl;
+    private javax.swing.JLabel channelLbl;
+    private javax.swing.JLabel greenStartLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel mainLbl;
     private javax.swing.JButton startChannelBtn;
     private javax.swing.JTextField startChannelTxt;
     private javax.swing.JButton subscribeBtn;
+    private javax.swing.JLabel userLbl;
     // End of variables declaration//GEN-END:variables
 }
