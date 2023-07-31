@@ -39,10 +39,17 @@ public class Channel implements Subject{
 
     @Override
     public void unSubscribeChannel(String name,Observer observer) {
-        List<Observer> list = channelList.get(name);
-        if (list.contains(observer)){
-            list.remove(observer);
+        List<Observer> users = channelList.get(name);
+        if (users != null) {
+            if (users.contains(observer)){
+                users.remove(observer);
+            }else{
+                throw new RuntimeException("User not found in this channel");
+            }
+        }else{
+            throw new RuntimeException("Channel not found");
         }
+        
     }
 
     @Override

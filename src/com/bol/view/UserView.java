@@ -15,6 +15,7 @@ public class UserView extends javax.swing.JFrame implements Observer {
 
     private Channel channellist = new Channel();
     private String nameChannel = null;
+    public String message = "";
     
     public UserView(String s) {
         initComponents();
@@ -101,6 +102,7 @@ public class UserView extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update(String t) {
+        this.message = t;
         textArea.append(t +"\n");
     }
 }
