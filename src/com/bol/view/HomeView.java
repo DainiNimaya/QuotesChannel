@@ -4,12 +4,14 @@
  */
 package com.bol.view;
 
-import com.bol.services.impl.Channel;
+import com.bol.services.impl.QuoteChannel;
+import com.bol.controller.ChannelController;
 
 
 public class HomeView extends javax.swing.JFrame {
 
-    private Channel channel;
+    private QuoteChannel quoteChannel;
+    private ChannelController channelController = new ChannelController();
     
     public HomeView() {
         initComponents();
@@ -17,9 +19,9 @@ public class HomeView extends javax.swing.JFrame {
         channelLabl.setVisible(false);
     }
     
-    public HomeView(Channel c) {
+    public HomeView(QuoteChannel channel) {
         this();
-        this.channel = c;
+        this.quoteChannel = channel;
     }
 
     /**
@@ -139,19 +141,19 @@ public class HomeView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void subscribeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subscribeBtnActionPerformed
-        UserView user = new UserView(channelLabl.getText());
-        this.channel.subscribeChannel(channelLabl.getText(),user);
+        UserView user = new UserView(quoteChannel);
+        this.channelController.subscribeChannel(quoteChannel,user);
         user.setVisible(true);
     }//GEN-LAST:event_subscribeBtnActionPerformed
 
     private void startChannelBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startChannelBtnMouseClicked
-        this.channel.addChannel(startChannelTxt.getText());
+        quoteChannel.startChannel(startChannelTxt.getText());
         jLabel1.setVisible(false);
         channelLabl.setText(startChannelTxt.getText());
         startChannelBtn.setEnabled(false);
         subscribeBtn.setVisible(true);
         channelLabl.setVisible(true);
-        new NewChannelView(startChannelTxt.getText()).setVisible(true);
+        new NewChannelView().setVisible(true);
     }//GEN-LAST:event_startChannelBtnMouseClicked
 
     private void startChannelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startChannelBtnActionPerformed

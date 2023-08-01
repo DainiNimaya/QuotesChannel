@@ -4,16 +4,18 @@
  */
 package com.bol.view;
 
-import com.bol.services.impl.Channel;
+import com.bol.services.impl.QuoteChannel;
+import com.bol.controller.ChannelController;
 
 
 public class NewChannelView extends javax.swing.JFrame{
     
-    private Channel channels = new Channel();
+    private QuoteChannel quoteChannel = QuoteChannel.getInstance();
+    private ChannelController channelController = new ChannelController();
     
-    public NewChannelView(String t) {
+    public NewChannelView() {
         initComponents();
-        ChannelNameLbl.setText(t);
+        ChannelNameLbl.setText(quoteChannel.name);
     }
     
     
@@ -78,7 +80,7 @@ public class NewChannelView extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void shareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareBtnActionPerformed
-        this.channels.notifySubcribers(mainMsg.getText());
+        this.channelController.notifySubcribers(quoteChannel, mainMsg.getText());
     }//GEN-LAST:event_shareBtnActionPerformed
 
     /**

@@ -8,9 +8,8 @@ package com.bol.services;
  *
  * @author USER
  */
-public interface Subject {
-    public void subscribeChannel(CommonChannel channel, Observer observer);
-    public void unSubscribeChannel(CommonChannel channel, Observer observer);
-    public void notifySubcribers(CommonChannel channel, String message);
+public interface CommonChannel {
     
+    public void startChannel(String name);
+    public String getChannelName();
 }

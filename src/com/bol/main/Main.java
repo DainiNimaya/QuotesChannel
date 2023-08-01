@@ -4,7 +4,7 @@
  */
 package com.bol.main;
 
-import com.bol.services.impl.Channel;
+import com.bol.services.impl.QuoteChannel;
 import com.bol.view.HomeView;
 
 /**
@@ -14,7 +14,7 @@ import com.bol.view.HomeView;
 public class Main {
     
     public static void main(String[] args) {
-        Channel channel = new Channel();
+        QuoteChannel channel = QuoteChannel.getInstance();
         new HomeView(channel).setVisible(true);
     }
     

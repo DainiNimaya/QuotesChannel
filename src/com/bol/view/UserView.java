@@ -4,8 +4,9 @@
  */
 package com.bol.view;
 
+import com.bol.services.CommonChannel;
 import com.bol.services.Observer;
-import com.bol.services.impl.Channel;
+import com.bol.controller.ChannelController;
 
 /**
  *
@@ -13,14 +14,15 @@ import com.bol.services.impl.Channel;
  */
 public class UserView extends javax.swing.JFrame implements Observer {
 
-    private Channel channellist = new Channel();
-    private String nameChannel = null;
+    private final ChannelController channelController = new ChannelController();
     public String message = "";
+    private final CommonChannel commonChannel;
     
-    public UserView(String s) {
+    
+    public UserView(CommonChannel channel) {
         initComponents();
-        nameChannel = s;
-        userChannel.setText(s);
+        this.commonChannel = channel;
+        userChannel.setText(channel.getChannelName());
         userUnSubsBtn.setVisible(true);
         userSubsBtn.setVisible(false);
     }
@@ -58,7 +60,7 @@ public class UserView extends javax.swing.JFrame implements Observer {
                 userUnSubsBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(userUnSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, -1));
+        getContentPane().add(userUnSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 110, -1));
         getContentPane().add(userChannel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 130, 20));
 
         userSubsBtn.setText("Subscribe");
@@ -73,13 +75,13 @@ public class UserView extends javax.swing.JFrame implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void userUnSubsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userUnSubsBtnActionPerformed
-        this.channellist.unSubscribeChannel(nameChannel,this);
+        this.channelController.unSubscribeChannel(commonChannel,this);
         userUnSubsBtn.setVisible(false);
         userSubsBtn.setVisible(true);
     }//GEN-LAST:event_userUnSubsBtnActionPerformed
 
     private void userSubsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userSubsBtnActionPerformed
-        this.channellist.subscribeChannel(nameChannel,this);
+        this.channelController.subscribeChannel(commonChannel,this);
         userUnSubsBtn.setVisible(true);
         userSubsBtn.setVisible(false);
     }//GEN-LAST:event_userSubsBtnActionPerformed
