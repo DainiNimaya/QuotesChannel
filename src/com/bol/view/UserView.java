@@ -25,6 +25,8 @@ public class UserView extends javax.swing.JFrame implements Observer {
         userChannel.setText(channel.getChannelName());
         userUnSubsBtn.setVisible(true);
         userSubsBtn.setVisible(false);
+        likeLbl.setVisible(false);
+        unlikeLbl.setVisible(true);
     }
 
 
@@ -40,36 +42,83 @@ public class UserView extends javax.swing.JFrame implements Observer {
         txtArea = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
+        unlikeLbl = new javax.swing.JLabel();
         userUnSubsBtn = new javax.swing.JButton();
+        likeLbl = new javax.swing.JLabel();
         userChannel = new javax.swing.JLabel();
         userSubsBtn = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        mainLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         textArea.setColumns(20);
+        textArea.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         textArea.setRows(5);
         jScrollPane1.setViewportView(textArea);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 350, 170));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 360, 150));
 
+        unlikeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/thumbs_down_30px.png"))); // NOI18N
+        getContentPane().add(unlikeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 30, 30));
+
+        userUnSubsBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         userUnSubsBtn.setText("Unsubscribe");
+        userUnSubsBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         userUnSubsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userUnSubsBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(userUnSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 110, -1));
-        getContentPane().add(userChannel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 130, 20));
+        getContentPane().add(userUnSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 120, 30));
 
+        likeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/facebook_like_30px.png"))); // NOI18N
+        getContentPane().add(likeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 30, 30));
+
+        userChannel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        getContentPane().add(userChannel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, 30));
+
+        userSubsBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         userSubsBtn.setText("Subscribe");
+        userSubsBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         userSubsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userSubsBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(userSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 90, -1));
+        getContentPane().add(userSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 120, 30));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 400, 20));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("-");
+        jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 5, 20, 20));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("X");
+        jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 5, 20, 20));
+
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/TyOgzR.png"))); // NOI18N
+        getContentPane().add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,13 +127,25 @@ public class UserView extends javax.swing.JFrame implements Observer {
         this.channelController.unSubscribeChannel(commonChannel,this);
         userUnSubsBtn.setVisible(false);
         userSubsBtn.setVisible(true);
+        likeLbl.setVisible(true);
+        unlikeLbl.setVisible(false);
     }//GEN-LAST:event_userUnSubsBtnActionPerformed
 
     private void userSubsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userSubsBtnActionPerformed
         this.channelController.subscribeChannel(commonChannel,this);
         userUnSubsBtn.setVisible(true);
         userSubsBtn.setVisible(false);
+        likeLbl.setVisible(false);
+        unlikeLbl.setVisible(true);
     }//GEN-LAST:event_userSubsBtnActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+       // UserView.setExtendedState(UserView.getExtendedState | UserView.ICONIFIED);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -94,9 +155,15 @@ public class UserView extends javax.swing.JFrame implements Observer {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel likeLbl;
+    private javax.swing.JLabel mainLbl;
     private javax.swing.JTextArea textArea;
     private javax.swing.JLabel txtArea;
+    private javax.swing.JLabel unlikeLbl;
     private javax.swing.JLabel userChannel;
     private javax.swing.JButton userSubsBtn;
     private javax.swing.JButton userUnSubsBtn;

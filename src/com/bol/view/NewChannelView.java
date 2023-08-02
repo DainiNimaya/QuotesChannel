@@ -28,53 +28,65 @@ public class NewChannelView extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPnl = new javax.swing.JPanel();
         mainMsg = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         shareBtn = new javax.swing.JButton();
         ChannelNameLbl = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        mainLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        shareBtn.setText("Share");
+        mainPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        mainMsg.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        mainPnl.add(mainMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 128, 372, 110));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/share_squared_30px.png"))); // NOI18N
+        mainPnl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 259, 25, 25));
+
+        shareBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        shareBtn.setText("SHARE");
+        shareBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         shareBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shareBtnActionPerformed(evt);
             }
         });
+        mainPnl.add(shareBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 256, 90, 30));
 
-        ChannelNameLbl.setFont(new java.awt.Font("Myanmar Text", 1, 18)); // NOI18N
+        ChannelNameLbl.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         ChannelNameLbl.setAlignmentX(0.5F);
         ChannelNameLbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mainPnl.add(ChannelNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 308, 32));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(shareBtn)
-                    .addComponent(mainMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ChannelNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(ChannelNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(mainMsg, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(shareBtn)
-                .addGap(22, 22, 22))
-        );
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("-");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainPnl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 5, 20, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("X");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        mainPnl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 5, 20, 20));
+        mainPnl.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 400, 20));
+
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/TyOgzR.png"))); // NOI18N
+        mainPnl.add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+
+        getContentPane().add(mainPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,6 +94,10 @@ public class NewChannelView extends javax.swing.JFrame{
     private void shareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareBtnActionPerformed
         this.channelController.notifySubcribers(quoteChannel, mainMsg.getText());
     }//GEN-LAST:event_shareBtnActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -92,8 +108,13 @@ public class NewChannelView extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ChannelNameLbl;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel mainLbl;
     private javax.swing.JTextField mainMsg;
+    private javax.swing.JPanel mainPnl;
     private javax.swing.JButton shareBtn;
     // End of variables declaration//GEN-END:variables
 

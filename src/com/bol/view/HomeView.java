@@ -16,6 +16,7 @@ public class HomeView extends javax.swing.JFrame {
     public HomeView() {
         initComponents();
         subscribeBtn.setVisible(false);
+        jLabel5.setVisible(false);
         channelLabl.setVisible(false);
     }
     
@@ -37,6 +38,7 @@ public class HomeView extends javax.swing.JFrame {
         channelLabl = new javax.swing.JLabel();
         greenStartLbl = new javax.swing.JLabel();
         startChannelBtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         startChannelTxt = new javax.swing.JTextField();
         subscribeBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -80,6 +82,9 @@ public class HomeView extends javax.swing.JFrame {
         });
         jPanel1.add(startChannelBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 160, 30));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/facebook_like_30px.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 30, 30));
+
         startChannelTxt.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         startChannelTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         startChannelTxt.setToolTipText("Enter Channel Name");
@@ -88,12 +93,15 @@ public class HomeView extends javax.swing.JFrame {
         subscribeBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         subscribeBtn.setText("Subscribe");
         subscribeBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        subscribeBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        subscribeBtn.setMaximumSize(new java.awt.Dimension(108, 27));
+        subscribeBtn.setMinimumSize(new java.awt.Dimension(108, 27));
         subscribeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subscribeBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(subscribeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 130, 30));
+        jPanel1.add(subscribeBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 123, 30));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -153,6 +161,7 @@ public class HomeView extends javax.swing.JFrame {
         startChannelBtn.setEnabled(false);
         subscribeBtn.setVisible(true);
         channelLabl.setVisible(true);
+        jLabel5.setVisible(true);
         new NewChannelView().setVisible(true);
     }//GEN-LAST:event_startChannelBtnMouseClicked
 
@@ -183,6 +192,7 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel mainLbl;
