@@ -25,8 +25,7 @@ public class UserView extends javax.swing.JFrame implements Observer {
         userChannel.setText(channel.getChannelName());
         userUnSubsBtn.setVisible(true);
         userSubsBtn.setVisible(false);
-        likeLbl.setVisible(false);
-        unlikeLbl.setVisible(true);
+       
     }
 
 
@@ -39,13 +38,11 @@ public class UserView extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtArea = new javax.swing.JLabel();
+        userUnSubsBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
-        unlikeLbl = new javax.swing.JLabel();
-        userUnSubsBtn = new javax.swing.JButton();
-        likeLbl = new javax.swing.JLabel();
         userChannel = new javax.swing.JLabel();
+        txtArea = new javax.swing.JLabel();
         userSubsBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -54,7 +51,17 @@ public class UserView extends javax.swing.JFrame implements Observer {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        userUnSubsBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        userUnSubsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/thumbs_down_30px.png"))); // NOI18N
+        userUnSubsBtn.setText("Unsubscribe");
+        userUnSubsBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        userUnSubsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userUnSubsBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(userUnSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, 30));
 
         textArea.setColumns(20);
         textArea.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -63,26 +70,13 @@ public class UserView extends javax.swing.JFrame implements Observer {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 360, 150));
 
-        unlikeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/thumbs_down_30px.png"))); // NOI18N
-        getContentPane().add(unlikeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 30, 30));
-
-        userUnSubsBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        userUnSubsBtn.setText("Unsubscribe");
-        userUnSubsBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        userUnSubsBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userUnSubsBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(userUnSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 120, 30));
-
-        likeLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/facebook_like_30px.png"))); // NOI18N
-        getContentPane().add(likeLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 30, 30));
-
-        userChannel.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        userChannel.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        userChannel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         getContentPane().add(userChannel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 180, 30));
+        getContentPane().add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         userSubsBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        userSubsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/facebook_like_30px.png"))); // NOI18N
         userSubsBtn.setText("Subscribe");
         userSubsBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         userSubsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +84,7 @@ public class UserView extends javax.swing.JFrame implements Observer {
                 userSubsBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(userSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 120, 30));
+        getContentPane().add(userSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, 30));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 400, 20));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -117,7 +111,7 @@ public class UserView extends javax.swing.JFrame implements Observer {
         });
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 5, 20, 20));
 
-        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/TyOgzR.png"))); // NOI18N
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/bd.jpg"))); // NOI18N
         getContentPane().add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
@@ -127,16 +121,14 @@ public class UserView extends javax.swing.JFrame implements Observer {
         this.channelController.unSubscribeChannel(commonChannel,this);
         userUnSubsBtn.setVisible(false);
         userSubsBtn.setVisible(true);
-        likeLbl.setVisible(true);
-        unlikeLbl.setVisible(false);
+        
     }//GEN-LAST:event_userUnSubsBtnActionPerformed
 
     private void userSubsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userSubsBtnActionPerformed
         this.channelController.subscribeChannel(commonChannel,this);
         userUnSubsBtn.setVisible(true);
         userSubsBtn.setVisible(false);
-        likeLbl.setVisible(false);
-        unlikeLbl.setVisible(true);
+        
     }//GEN-LAST:event_userSubsBtnActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -159,11 +151,9 @@ public class UserView extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel likeLbl;
     private javax.swing.JLabel mainLbl;
     private javax.swing.JTextArea textArea;
     private javax.swing.JLabel txtArea;
-    private javax.swing.JLabel unlikeLbl;
     private javax.swing.JLabel userChannel;
     private javax.swing.JButton userSubsBtn;
     private javax.swing.JButton userUnSubsBtn;

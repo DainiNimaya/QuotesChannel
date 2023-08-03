@@ -30,7 +30,6 @@ public class NewChannelView extends javax.swing.JFrame{
 
         mainPnl = new javax.swing.JPanel();
         mainMsg = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         shareBtn = new javax.swing.JButton();
         ChannelNameLbl = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -39,7 +38,6 @@ public class NewChannelView extends javax.swing.JFrame{
         mainLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         mainPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,10 +45,8 @@ public class NewChannelView extends javax.swing.JFrame{
         mainMsg.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         mainPnl.add(mainMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 128, 372, 110));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/share_squared_30px.png"))); // NOI18N
-        mainPnl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 259, 25, 25));
-
         shareBtn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        shareBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/share_squared_30px.png"))); // NOI18N
         shareBtn.setText("SHARE");
         shareBtn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         shareBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -58,22 +54,25 @@ public class NewChannelView extends javax.swing.JFrame{
                 shareBtnActionPerformed(evt);
             }
         });
-        mainPnl.add(shareBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 256, 90, 30));
+        mainPnl.add(shareBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 256, 120, 30));
 
         ChannelNameLbl.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        ChannelNameLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ChannelNameLbl.setAlignmentX(0.5F);
         ChannelNameLbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        mainPnl.add(ChannelNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 308, 32));
+        mainPnl.add(ChannelNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 308, 32));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("-");
+        jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mainPnl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 5, 20, 20));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("X");
+        jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -83,7 +82,7 @@ public class NewChannelView extends javax.swing.JFrame{
         mainPnl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 5, 20, 20));
         mainPnl.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 400, 20));
 
-        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/TyOgzR.png"))); // NOI18N
+        mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/bd.jpg"))); // NOI18N
         mainPnl.add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         getContentPane().add(mainPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
@@ -108,7 +107,6 @@ public class NewChannelView extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ChannelNameLbl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
