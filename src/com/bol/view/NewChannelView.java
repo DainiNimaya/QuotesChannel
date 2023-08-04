@@ -32,7 +32,6 @@ public class NewChannelView extends javax.swing.JFrame{
         mainMsg = new javax.swing.JTextField();
         shareBtn = new javax.swing.JButton();
         ChannelNameLbl = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         mainLbl = new javax.swing.JLabel();
@@ -61,13 +60,6 @@ public class NewChannelView extends javax.swing.JFrame{
         ChannelNameLbl.setAlignmentX(0.5F);
         ChannelNameLbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainPnl.add(ChannelNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 308, 32));
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("-");
-        jLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mainPnl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 5, 20, 20));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -107,7 +99,6 @@ public class NewChannelView extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ChannelNameLbl;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel mainLbl;
