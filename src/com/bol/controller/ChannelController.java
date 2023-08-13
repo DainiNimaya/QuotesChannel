@@ -44,6 +44,8 @@ public class ChannelController implements Subject {
         } catch(RuntimeException e){
             System.out.println(e.getMessage());
             throw e;
+        } finally{
+            System.out.println("Finally block is executed");
         }
     }
 
@@ -62,9 +64,11 @@ public class ChannelController implements Subject {
             }else{
                 throw new RuntimeException("Channel not found");
             }
-        }catch(RuntimeException e) {
+        } catch(RuntimeException e) {
             System.out.println(e.getMessage());
             throw e;
+        } finally{
+            System.out.println("Finally block is executed");
         }
     }
 
@@ -81,9 +85,11 @@ public class ChannelController implements Subject {
             } else {
                 throw new RuntimeException("User not found in this channel");
             }
-        }catch(RuntimeException e) {
+        } catch(RuntimeException e) {
             System.out.println(e.getMessage());
             throw e;
+        } finally{
+            System.out.println("Finally block is executed");
         }
     }
     
@@ -96,9 +102,11 @@ public class ChannelController implements Subject {
             if(!channelList.containsKey(channel)){
                 channelList.put(channel, new ArrayList<>());
             } 
-        }catch(NullPointerException e) {
+        } catch(NullPointerException e) {
             System.out.println(e.getMessage());
             throw e;
+        } finally{
+            System.out.println("Finally block is executed");
         }
         
     }
@@ -111,9 +119,11 @@ public class ChannelController implements Subject {
             }else{
                 throw new NullPointerException("Channel can't be null");
             }
-        }catch(NullPointerException e) {
+        } catch(NullPointerException e) {
             System.out.println(e.getMessage());
             throw e;
+        } finally{
+            System.out.println("Finally block is executed");
         }
     }
     

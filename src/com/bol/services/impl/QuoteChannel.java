@@ -37,6 +37,8 @@ public class QuoteChannel implements CommonChannel{
         } catch(RuntimeException e){
             System.out.println(e.getMessage());
             throw e;        
+        } finally{
+            System.out.println("Finally block is executed");
         }
        
     }
@@ -56,8 +58,9 @@ public class QuoteChannel implements CommonChannel{
         } catch(IllegalArgumentException | NullPointerException e) {
             System.out.println(e.getMessage());
             throw e; 
+        } finally{
+            System.out.println("Finally block is executed");
         } 
-        
     }
     
 }
