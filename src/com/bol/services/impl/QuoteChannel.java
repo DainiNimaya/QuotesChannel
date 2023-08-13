@@ -28,20 +28,36 @@ public class QuoteChannel implements CommonChannel{
     
     @Override
     public String getChannelName(){
-        if (!name.isEmpty()) {
-            return name;
-        } else {
-            throw new RuntimeException("Channel not started yet");
+        try{
+            if (!name.isEmpty()) {
+                return name;
+            } else {
+                throw new RuntimeException("Channel not started yet");
+            }
+        } catch(RuntimeException e){
+            System.out.println(e.getMessage());
+            throw e;        
         }
+       
     }
 
     @Override
     public void startChannel(String name) {
-        if(name.isEmpty() || name == null){
-            throw new IllegalArgumentException("Channel name can't be empty or null");
-        } else {
-            this.name = name;
-        }
+        try{
+            if (name == null) {
+                throw new NullPointerException("Channel name can't be null");
+            }
+            if(name.isEmpty()){
+                throw new IllegalArgumentException("Channel name can't be empty");
+            } else {
+                this.name = name;
+            }
+        
+        } catch(IllegalArgumentException | NullPointerException e) {
+            System.out.println(e.getMessage());
+            throw e; 
+        } 
+        
     }
     
 }

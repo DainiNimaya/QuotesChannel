@@ -56,10 +56,16 @@ public class QuoteChannelTest {
     
     
     @Test
-    public void testStartChannelWithNullOrEmptyStringValues() {
+    public void testStartChannelWithEmptyStringValues() {
        thrown.expect(IllegalArgumentException.class);
-       thrown.expectMessage("Channel name can't be empty or null");
+       thrown.expectMessage("Channel name can't be empty");
        quoteChannel.startChannel("");
+    }
+    
+    @Test
+    public void testStartChannelWithNullStringValues() {
+       thrown.expect(NullPointerException.class);
+       thrown.expectMessage("Channel name can't be null");
        quoteChannel.startChannel(null);
     }
     

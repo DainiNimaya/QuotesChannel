@@ -31,15 +31,6 @@ public class ChannelControllerTest {
         channelController = new ChannelController();
         quoteChannel = QuoteChannel.getInstance();
     }
-    
-   
-//    @Test
-//    public void testAddChannelNameAlreadyExist() {
-//       channelController.addChannel("Quotes Channel");
-//       thrown.expect(RuntimeException.class);
-//       thrown.expectMessage("Channel name already exist");
-//       channelController.notifySubcribers("Quotes Channel");
-//    }
 
     
     @Test
@@ -54,7 +45,7 @@ public class ChannelControllerTest {
     
     @Test
     public void testSubscribeChannelWhenChannelIsNull() {
-        thrown.expect(IllegalArgumentException.class);
+        thrown.expect(NullPointerException.class);
         thrown.expectMessage("Channel can't be null");
         quoteChannel.startChannel("Quotes Channel");
         channelController.subscribeChannel(null, new UserView(quoteChannel));
@@ -95,7 +86,7 @@ public class ChannelControllerTest {
     
     @Test
     public void testUnSubscribeChannelWhenChannelIsNull() {
-        thrown.expect(IllegalArgumentException.class);
+        thrown.expect(NullPointerException.class);
         thrown.expectMessage("Channel can't be null");
         quoteChannel.startChannel("Quotes Channel");
         UserView user = new UserView(quoteChannel);
