@@ -12,7 +12,7 @@ import com.bol.view.HomeView;
  * @author USER
  */
 public class Main {
-    
+   
     public static void main(String[] args) {
         QuoteChannel channel = QuoteChannel.getInstance();
         new HomeView(channel).setVisible(true);

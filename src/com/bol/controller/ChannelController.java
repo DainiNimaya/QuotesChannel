@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class ChannelController implements Subject {
     
-    private static HashMap<CommonChannel, List<Observer>> channelList = new HashMap<>();
+    private static final HashMap<CommonChannel, List<Observer>> channelList = new HashMap<>();
 
     @Override
     public void subscribeChannel(CommonChannel channel, Observer observer) {
@@ -36,7 +36,7 @@ public class ChannelController implements Subject {
                         throw new RuntimeException("User have already subscribed");
                     }
                 }else{
-                    throw new RuntimeException("User detail not found");
+                    throw new NullPointerException("User detail not found");
                 }
             }else{
                 throw new RuntimeException("Channel not found");
@@ -45,7 +45,7 @@ public class ChannelController implements Subject {
             System.out.println(e.getMessage());
             throw e;
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in subscribeChannel");
         }
     }
 
@@ -68,7 +68,7 @@ public class ChannelController implements Subject {
             System.out.println(e.getMessage());
             throw e;
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in unSubscribeChannel");
         }
     }
 
@@ -89,7 +89,7 @@ public class ChannelController implements Subject {
             System.out.println(e.getMessage());
             throw e;
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in notifySubcribers");
         }
     }
     
@@ -106,7 +106,7 @@ public class ChannelController implements Subject {
             System.out.println(e.getMessage());
             throw e;
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in addChannel");
         }
         
     }
@@ -123,7 +123,7 @@ public class ChannelController implements Subject {
             System.out.println(e.getMessage());
             throw e;
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in getChannelSubscribers");
         }
     }
     

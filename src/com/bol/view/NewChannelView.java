@@ -10,8 +10,8 @@ import com.bol.controller.ChannelController;
 
 public class NewChannelView extends javax.swing.JFrame{
     
-    private QuoteChannel quoteChannel = QuoteChannel.getInstance();
-    private ChannelController channelController = new ChannelController();
+    private final QuoteChannel quoteChannel = QuoteChannel.getInstance();
+    private final ChannelController channelController = new ChannelController();
     
     public NewChannelView() {
         initComponents();
@@ -32,7 +32,6 @@ public class NewChannelView extends javax.swing.JFrame{
         mainMsg = new javax.swing.JTextField();
         shareBtn = new javax.swing.JButton();
         ChannelNameLbl = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         mainLbl = new javax.swing.JLabel();
 
@@ -60,18 +59,6 @@ public class NewChannelView extends javax.swing.JFrame{
         ChannelNameLbl.setAlignmentX(0.5F);
         ChannelNameLbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mainPnl.add(ChannelNameLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 308, 32));
-
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("X");
-        jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        mainPnl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 5, 20, 20));
         mainPnl.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 400, 20));
 
         mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/bd.jpg"))); // NOI18N
@@ -86,10 +73,6 @@ public class NewChannelView extends javax.swing.JFrame{
         this.channelController.notifySubcribers(quoteChannel, mainMsg.getText());
     }//GEN-LAST:event_shareBtnActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -99,7 +82,6 @@ public class NewChannelView extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ChannelNameLbl;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel mainLbl;
     private javax.swing.JTextField mainMsg;

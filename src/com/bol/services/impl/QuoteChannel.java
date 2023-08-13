@@ -11,7 +11,7 @@ import com.bol.services.CommonChannel;
  */
 public class QuoteChannel implements CommonChannel{
     
-
+    
     private static QuoteChannel channel;
     public String name = "";
    
@@ -29,18 +29,18 @@ public class QuoteChannel implements CommonChannel{
     @Override
     public String getChannelName(){
         try{
-            if (!name.isEmpty()) {
-                return name;
-            } else {
+            if (name.isEmpty()) {
                 throw new RuntimeException("Channel not started yet");
+            } else {
+                return name;
             }
         } catch(RuntimeException e){
             System.out.println(e.getMessage());
             throw e;        
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in getChannelName");
         }
-       
+        
     }
 
     @Override
@@ -59,8 +59,11 @@ public class QuoteChannel implements CommonChannel{
             System.out.println(e.getMessage());
             throw e; 
         } finally{
-            System.out.println("Finally block is executed");
+            System.out.println("Finally block is executed in startChannel");
         } 
     }
     
 }
+
+
+

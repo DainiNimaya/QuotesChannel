@@ -28,6 +28,11 @@ public class UserView extends javax.swing.JFrame implements Observer {
        
     }
 
+    @Override
+    public void update(String text) {
+        this.message = text;
+        textArea.append(text +"\n");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,7 +50,6 @@ public class UserView extends javax.swing.JFrame implements Observer {
         txtArea = new javax.swing.JLabel();
         userSubsBtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
         mainLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,18 +90,6 @@ public class UserView extends javax.swing.JFrame implements Observer {
         getContentPane().add(userSubsBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, 30));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 400, 20));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("X");
-        jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 5, 20, 20));
-
         mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/bd.jpg"))); // NOI18N
         getContentPane().add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -118,10 +110,6 @@ public class UserView extends javax.swing.JFrame implements Observer {
         
     }//GEN-LAST:event_userSubsBtnActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -130,7 +118,6 @@ public class UserView extends javax.swing.JFrame implements Observer {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel mainLbl;
@@ -141,9 +128,5 @@ public class UserView extends javax.swing.JFrame implements Observer {
     private javax.swing.JButton userUnSubsBtn;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void update(String t) {
-        this.message = t;
-        textArea.append(t +"\n");
-    }
+   
 }

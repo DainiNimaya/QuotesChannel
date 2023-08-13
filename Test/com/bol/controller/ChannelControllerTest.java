@@ -65,7 +65,7 @@ public class ChannelControllerTest {
     
     @Test
     public void testSubscribeChannelWithNullUsers() {
-        thrown.expect(RuntimeException.class);
+        thrown.expect(NullPointerException.class);
         thrown.expectMessage("User detail not found");
         quoteChannel.startChannel("Quotes Channel");
         channelController.subscribeChannel(quoteChannel, null);

@@ -9,6 +9,6 @@ package com.bol.services;
  * @author USER
  */
 public interface Observer {
-    public void update(String t);
+    public void update(String text);  
     
 }

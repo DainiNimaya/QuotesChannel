@@ -43,11 +43,9 @@ public class HomeView extends javax.swing.JFrame {
         channelLbl = new javax.swing.JLabel();
         userLbl = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
         mainLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -115,18 +113,6 @@ public class HomeView extends javax.swing.JFrame {
         jPanel1.add(userLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 230, 210));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 470, 20));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("X");
-        jLabel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 5, 20, 20));
-
         mainLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/bol/assets/bd.jpg"))); // NOI18N
         jPanel1.add(mainLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 340));
 
@@ -160,10 +146,6 @@ public class HomeView extends javax.swing.JFrame {
        // greenStartLbl.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_startChannelBtnMouseEntered
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
-
     private void startChannelBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startChannelBtnMouseExited
        // greenStartLbl.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_startChannelBtnMouseExited
@@ -180,7 +162,6 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JLabel channelLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel mainLbl;
